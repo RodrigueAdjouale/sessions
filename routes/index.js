@@ -13,12 +13,7 @@ router.get('/', function(req, res, next) {
     {name: "Model TITAN5", url:"/images/bike-5.jpg", price: 989},
     {name: "Model AMIG39", url:"/images/bike-6.jpg", price: 599}
   ]
-// création de la variable de session et iaffectation à videreq
 
-// if (!req.session.dataCardBike) {
-// // si session n'existe pas
-// req.session.dataCardBike = [];
-// }
 
 //affectation de la varable de session panier
 if (typeof req.session.dataCardBike == "undefined")
@@ -26,14 +21,7 @@ if (typeof req.session.dataCardBike == "undefined")
   req.session.dataCardBike = [];
 
 }
-// tester si la variable de session existe
-// si elle existe on fait rien
-//si elle n'existe pas on la créé
-// if (typeof myVar != "undefined") {
-// // ta variable existe
-// } else {
-// // elle n'existe pas
-// }
+
 
   // envoyer le catalogue et le panier initialisé à vide lors de la première connexion à la boutique
   res.render('index', { dataBike:dataBike , dataCardBike:req.session.dataCardBike });
