@@ -40,7 +40,7 @@ router.get('/shop', function(req, res, next) {
 
 //ajout dans le panier
 router.post('/add-shop', function(req, res, next) {
-
+console.log(req.body);
   req.session.dataCardBike.push(req.body);
   res.render('shop', {dataCardBike : req.session.dataCardBike});
 });
